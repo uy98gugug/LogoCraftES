@@ -1,0 +1,312 @@
+import React from 'react';
+import { Instagram, Check, Sparkles, Zap, Award, Clock } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+
+export default function Home() {
+  const plans = [
+    {
+      name: 'Básico',
+      price: '2,5€',
+      features: [
+        'Logo profesional',
+        '1 revisión incluida',
+        'Formato PNG',
+        'Entrega en 48h',
+      ],
+      popular: false,
+    },
+    {
+      name: 'Profesional',
+      price: '3,5€',
+      features: [
+        'Logo profesional',
+        '2 revisiones incluidas',
+        'Formatos PNG + JPG',
+        'Paleta de colores',
+        'Entrega en 24h',
+      ],
+      popular: true,
+    },
+    {
+      name: 'Premium',
+      price: '5€',
+      features: [
+        'Logo profesional premium',
+        '3 revisiones incluidas',
+        'Todos los formatos (PNG, JPG, SVG)',
+        'Paleta de colores completa',
+        'Manual de marca básico',
+        'Entrega en 12h',
+      ],
+      popular: false,
+    },
+  ];
+
+  const benefits = [
+    {
+      icon: Zap,
+      title: 'Entrega Rápida',
+      description: 'Tu logo listo en 12-48 horas',
+    },
+    {
+      icon: Award,
+      title: 'Calidad Premium',
+      description: 'Diseños profesionales y únicos',
+    },
+    {
+      icon: Clock,
+      title: 'Soporte Directo',
+      description: 'Atención personalizada por Instagram',
+    },
+  ];
+
+  const exampleLogos = [
+    'https://images.unsplash.com/photo-1635322966219-b75ed372eb01?w=400',
+    'https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=400',
+    'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400',
+    'https://images.unsplash.com/photo-1634942537034-2531766767d1?w=400',
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-white to-amber-50 opacity-60" />
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+          <div className="text-center">
+            <div className="inline-block mb-8 animate-fade-in">
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68dc133f9ddb2ee2708314c3/2fa19be3b_Diseatulogoprofesionalahora.png"
+                alt="craftlogoES"
+                className="h-32 sm:h-40 w-auto mx-auto drop-shadow-2xl"
+              />
+            </div>
+            
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 tracking-tight">
+              <span className="bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 bg-clip-text text-transparent">
+                craftlogoES
+              </span>
+            </h1>
+            
+            <p className="text-xl sm:text-2xl text-gray-600 mb-4 font-light max-w-3xl mx-auto">
+              Diseña tu logo profesional ahora
+            </p>
+            
+            <p className="text-lg sm:text-xl text-gray-500 mb-10 max-w-2xl mx-auto">
+              Logos únicos y profesionales desde <span className="text-amber-600 font-semibold">2,5€</span>
+            </p>
+            
+            <a 
+              href="https://www.instagram.com/logocraftes/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-white px-8 py-6 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              >
+                <Instagram className="mr-2 h-6 w-6" />
+                Contactar por Instagram
+              </Button>
+            </a>
+          </div>
+        </div>
+        
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent" />
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <div 
+                key={index}
+                className="text-center p-6 rounded-2xl hover:bg-amber-50 transition-all duration-300 group"
+              >
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-amber-100 to-yellow-100 mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <benefit.icon className="h-8 w-8 text-amber-600" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-gray-900">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-amber-50 to-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 bg-amber-100 text-amber-700 border-amber-200 px-4 py-1 text-sm">
+              <Sparkles className="w-4 h-4 mr-1 inline" />
+              Precios Increíbles
+            </Badge>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">
+              Elige tu plan perfecto
+            </h2>
+            <p className="text-xl text-gray-600">Calidad profesional a precios accesibles</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {plans.map((plan, index) => (
+              <Card 
+                key={index}
+                className={`relative overflow-hidden transition-all duration-300 hover:shadow-2xl ${
+                  plan.popular 
+                    ? 'border-2 border-amber-500 shadow-xl scale-105 bg-gradient-to-b from-white to-amber-50' 
+                    : 'border border-gray-200 hover:border-amber-300'
+                }`}
+              >
+                {plan.popular && (
+                  <div className="absolute top-0 right-0 bg-gradient-to-r from-amber-500 to-yellow-500 text-white px-4 py-1 text-sm font-semibold rounded-bl-lg">
+                    MÁS POPULAR
+                  </div>
+                )}
+                
+                <CardHeader className="text-center pb-4 pt-8">
+                  <CardTitle className="text-2xl font-bold text-gray-900 mb-2">
+                    {plan.name}
+                  </CardTitle>
+                  <div className="mb-4">
+                    <span className="text-5xl font-bold bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent">
+                      {plan.price}
+                    </span>
+                  </div>
+                </CardHeader>
+                
+                <CardContent className="pb-8">
+                  <ul className="space-y-3 mb-6">
+                    {plan.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start">
+                        <Check className="h-5 w-5 text-amber-600 mr-2 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <a 
+                    href="https://www.instagram.com/logocraftes/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <Button 
+                      className={`w-full ${
+                        plan.popular
+                          ? 'bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 shadow-lg'
+                          : 'bg-gray-900 hover:bg-gray-800'
+                      } text-white py-6 font-semibold transition-all duration-300`}
+                    >
+                      Solicitar ahora
+                    </Button>
+                  </a>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">
+              Diseños que inspiran
+            </h2>
+            <p className="text-xl text-gray-600">Ejemplos de nuestro trabajo profesional</p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {exampleLogos.map((logo, index) => (
+              <div 
+                key={index}
+                className="aspect-square rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-gradient-to-br from-gray-50 to-amber-50"
+              >
+                <img 
+                  src={logo} 
+                  alt={`Logo ejemplo ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-5xl font-bold mb-6 text-white">
+            ¿Listo para tu logo perfecto?
+          </h2>
+          <p className="text-xl text-white/90 mb-10">
+            Contáctanos ahora en Instagram y comienza tu proyecto
+          </p>
+          
+          <a 
+            href="https://www.instagram.com/logocraftes/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block"
+          >
+            <Button 
+              size="lg" 
+              className="bg-white text-amber-600 hover:bg-gray-100 px-10 py-7 text-lg font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
+            >
+              <Instagram className="mr-3 h-7 w-7" />
+              @craftlogoES
+            </Button>
+          </a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <img 
+            src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_68dc133f9ddb2ee2708314c3/2fa19be3b_Diseatulogoprofesionalahora.png"
+            alt="craftlogoES"
+            className="h-16 w-auto mx-auto mb-6 opacity-80"
+          />
+          <p className="text-gray-400 mb-4">craftlogoES - Diseño de logos profesionales</p>
+          <a 
+            href="https://www.instagram.com/logocraftes/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-amber-400 hover:text-amber-300 transition-colors duration-300"
+          >
+            <Instagram className="mr-2 h-5 w-5" />
+            @craftlogoES
+          </a>
+          <p className="text-gray-500 mt-8 text-sm">
+            © 2025 craftlogoES. Todos los derechos reservados.
+          </p>
+        </div>
+      </footer>
+
+      <style>{`
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-fade-in {
+          animation: fade-in 0.8s ease-out;
+        }
+      `}</style>
+    </div>
+  );
+}
